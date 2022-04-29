@@ -9,4 +9,4 @@ src/models contains the model training results, as well as the hyperparameter-tu
 
 src/cleaning.ipynb contains the entirety of the procedure used for pre-processing, while src/Modelling.ipynb includes the modelling procedure. The model functions are written in src/models.py
 
-Authors: amin.debabeche@epfl.ch, xxx@epfl.ch, xxx@epfl.ch, xxx@epfl.ch & xxx@epfl.ch
+Authors: amin.debabeche@epfl.ch, karim.alkhadzh@epfl.ch, xxx@epfl.ch, xxx@epfl.ch & xxx@epfl.ch
