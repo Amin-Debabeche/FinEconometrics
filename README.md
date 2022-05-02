@@ -12,6 +12,6 @@ src/cleaning.ipynb contains the entirety of the procedure used for pre-processin
 Authors: amin.debabeche@epfl.ch, karim.alkhadzh@epfl.ch, xxx@epfl.ch, xxx@epfl.ch & xxx@epfl.ch
 
 The following is the link who did similar projects before:
-https://github.com/pimkarnm/NLP-Bitcoin
-https://github.com/Drabble/TwitterSentimentAndCryptocurrencies
+https://github.com/pimkarnm/NLP-Bitcoin,
+https://github.com/Drabble/TwitterSentimentAndCryptocurrencies,
 https://github.com/arapelli/Bitcoin-price-prediction-using-twitter-sentiment-analysis
