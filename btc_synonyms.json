@@ -9,6 +9,12 @@
   "synonym ": "Btc"
  },
  {
+  "synonym ": "xbt"
+ },
+ {
+  "synonym ": "XBT"
+ },
+ {
   "synonym ": "bitcoin"
  },
  {
@@ -21,6 +27,12 @@
   "synonym ": "BITCOIN"
  },
  {
+  "synonym ": "crypto"
+ },
+ {
+  "synonym ": "Crypto"
+ },
+ {
   "synonym ": "satoshis"
  },
  {
@@ -28,6 +40,15 @@
  },
  {
   "synonym ": "cryptocurrency"
+ },
+ {
+  "synonym ": "Cryptocurrency"
+ },
+ {
+  "synonym ": "cryptocurrencies"
+ },
+ {
+  "synonym ": "Cryptocurrencies"
  },
  {
   "synonym ": "defi"
