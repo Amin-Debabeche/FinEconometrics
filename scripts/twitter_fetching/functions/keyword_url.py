@@ -22,11 +22,11 @@ def keyword_url(keyword, user_name, max_results, start_time, end_time_url):
 if __name__ == "__main__":
     keywords = sys.argv[1]
     username = sys.argv[2]
-    user_id = sys.argv[3]
     start_time = sys.argv[4]
     end_time = sys.argv[5]
-    TOKEN = 'AAAAAAAAAAAAAAAAAAAAAKHzbwEAAAAANrBlqwYokl3ttFARZ4ZmiSD7Bw0%3DRa8THgCyIJMa416ckXp3dLfyC4JgfsugJPgLkRT802r0hynEoy'
-    headers = {"Authorization": f"Bearer {TOKEN}"}
+    headers = sys.argv[6]
+    id = sys.argv[7]
+
     tweets_url = keyword_url(keywords, username, 500, start_time, end_time)
     tweets_response = connect_to_endpoint(tweets_url[0], headers, tweets_url[1])
     df_final = pd.json_normalize(tweets_response['data'])
@@ -46,6 +46,6 @@ if __name__ == "__main__":
                    'public_metrics.id':'id',
                    }
     df_final['is_reply_to_user'] = 0
-    df_final['related_user_id'] = user_id
+    df_final['related_user_id'] = id
     df_final.rename(columns = columns, inplace=True)
-    df_final.to_csv('user_data_final.csv',index=False)    
+    df_final.to_csv('tweets_data_final.csv',index=False)

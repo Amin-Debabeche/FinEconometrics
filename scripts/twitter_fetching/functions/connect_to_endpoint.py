@@ -1,12 +1,18 @@
 import sys
 import requests
+from FinEconometrics.scripts.twitter_fetching.functions.throttling import throttling
 
 def connect_to_endpoint(url, headers, params, next_token = None):
-    params['next_token'] = next_token   #params object received from create_url function
+    rate_url = "https://api.twitter.com/1.1/application/rate_limit_status.json"
+    rate_params = {'resources' : 'help,users,search,statuses'}
+    while True:
+        status_response = requests.request("GET",rate_url, headers = headers, params = rate_params)
+        if not status_response.ok:
+            throttling(status_response)
+            raise Exception(status_response.status_code, status_response.text)
+        break
+    params['next_token'] = next_token ##### ADD HERE CODE we do not need this except in the keyword url ?
     response = requests.request("GET", url, headers = headers, params = params)
-    print("Endpoint Response Code: " + str(response.status_code))
-    if response.status_code != 200:
-        raise Exception(response.status_code, response.text)
     return response.json()
 
 if __name__ == "__main__":
