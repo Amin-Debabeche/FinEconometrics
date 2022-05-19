@@ -1,1 +1,1 @@
-joined_time,conversation_id,text,related_user_id,retweet_count,reply_count,like_count,quote_count,is_reply_to_user,related_user_id
+text,conversation_id,created_at,retweet_count,reply_count,like_count,quote_count,is_reply_to_user,related_user_id
