@@ -31,12 +31,11 @@ for l in tqdm(range(len(users[:1]))):
     id = users.related_user_id[l]
     keyword_url(keywords, username, max_results, start_time, end_time, headers, id, token)
     done.to_csv('../../../data/user_info/done.csv', mode='a', index=False, header=False)
+    
+    print('finished')
 
-print('finished')
-#%%
-tweets_data = pd.read_csv('tweets_data_final.csv')
-tweets = tweets_data[['conversation_id', 'related_user_id.1']].astype(str)
-#%%
+tweets_data = pd.read_csv('../../../data/tweets/tweets_data_final.csv')
+tweets = tweets_data[['conversation_id', 'related_user_id.1']].astype(str)  
 for l in tqdm(range(len(tweets[:1]))):
     to_user = tweets['related_user_id.1'][l]
     conversation_id = tweets.conversation_id[l]

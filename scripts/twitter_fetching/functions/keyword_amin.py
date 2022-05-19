@@ -43,3 +43,5 @@ def keyword_url(keywords, username, max_results, start_time, end_time_url, heade
     df_final['user_id'] = id
     df_final.rename(columns = columns, inplace=True)
     df_final.to_csv('../../../data/tweets/tweets_data_final.csv', mode='a', index=False, header=False)
+    df_final[['conversation_id', 'related_user_id.1']].astype(str).to_csv(('../../../data/tweets/.tmp.csv'))
+    
