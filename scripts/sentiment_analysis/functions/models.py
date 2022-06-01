@@ -53,7 +53,7 @@ def build_tcn(X, n_layers, cnn_dropout_p, dense_dropout_p, activation, n_dense_l
     inputs = keras.layers.Input(X.shape[1:])
 
     o = keras.layers.Conv1D(4, kernel_size = 3, activation = activation, kernel_initializer = kernel_initializer)(inputs)
-    o = keras.layers.MaxPooling1D(pool_size = 1)(o)
+    #o = keras.layers.MaxPooling1D(pool_size = 2)(o)
 
     for n_layer in range(n_layers):
 
@@ -61,7 +61,7 @@ def build_tcn(X, n_layers, cnn_dropout_p, dense_dropout_p, activation, n_dense_l
         o = keras.layers.Conv1D(convolutions[n_layer], kernel_size = 3, activation = activation, kernel_initializer = kernel_initializer)(o)
         o = layers.BatchNormalization()(o) if batch_normalization else o
         o = keras.layers.Conv1D(convolutions[n_layer], kernel_size = 3, activation = activation, kernel_initializer = kernel_initializer)(o) if double_cnn_per_layer else o
-        o = keras.layers.MaxPooling1D(pool_size = 1)(o)
+        #o = keras.layers.MaxPooling1D(pool_size = 2)(o)
 
     o = keras.layers.Flatten()(o)
     o = keras.layers.Dropout(dense_dropout_p)(o) if dense_dropout_p is not None else o
